@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="">
+<head>
+	<title>Angular ejemplo</title>
+	<meta charset="utf-8"/>
+</head>
+<body>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<input type="text" name="nombre" ng-model="nombre" placeholder="Ingresa nombre">
+				<span class="text-success">Ingreso: {{nombre}}</span>
+				<span class="text-warning">Longitud de nombre: {{nombre.length}}</span>
+			</div>	
+		</div>
+	</div>
+
+<script src="js/angular.min.js"></script>
+<script src="js/ejemplo_angular.js"></script>
+
+<!--Bootstrap-->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/> 
+<script src="js/bootstrap.min.js" />
+
+</body>
+</html>
