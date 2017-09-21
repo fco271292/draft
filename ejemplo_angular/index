@@ -23,7 +23,34 @@
 		</div>
 	</div>
 
-<script type="text/javascript" src="js/angular.min.js"></script>
+	<div class="container">
+		<div class="row" ng-controller="ValidacionSimple as vs">
+			<input type="password" name="password" ng-model="password" placeholder="Ingresa contraseña">
+			<span ng-show="longitud_minima" class="alert-danger">Debe ingresar al menos {{longitud_cadena_minima}} caracteres</span>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row" ng-controller="ValidacionMultiple as vm">
+			
+			<fieldset>
+				<input type="checkbox" name="libro" ng-model="libro" ng-change="cambio()">Libro</input>
+				<span class="text-info">{{valorCheckbox}}</span>
+				<input type="checkbox" name="revista" ng-model="revista">Revista</input>
+				<!-- <input type="radio" name="valorSiNo" value="true" ng-model="cuento">Si</input>
+				<input type="radio" name="valorSiNo" value="false" ng-model="cuento">No</input> -->
+			</fieldset>
+			
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row" ng-controller="Iteracion as it">
+			{{it}}
+		</div>
+	</div>
+
+<script type="text/javascript" src="js/angular.js"></script>
 <script type="text/javascript" src="js/ejemplo_angular.js"></script>
 
 <!--Bootstrap-->
