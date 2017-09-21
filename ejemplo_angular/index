@@ -45,8 +45,8 @@
 	</div>
 
 	<div class="container">
-		<div class="row" ng-controller="Iteracion as it">
-			{{it}}
+		<div class="row" ng-controller="Iteracion as itera">
+			{{itera.msn}}
 		</div>
 	</div>
 

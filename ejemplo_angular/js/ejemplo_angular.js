@@ -31,7 +31,7 @@ app.controller('ValidacionMultiple', ['$scope', function($scope){
 	});
 }])
 
-app.controller('Iteracion', ['', function($scope){
+app.controller('Iteracion', function($scope){
 	var self = this
 	self.msn = "Hola"
-}])
+})
