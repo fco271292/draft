@@ -33,5 +33,9 @@ app.controller('ValidacionMultiple', ['$scope', function($scope){
 
 app.controller('Iteracion', function($scope){
 	var self = this
-	self.msn = "Hola"
+	self.msn = "Abecedario"
+	self.lista  = []
+	for (var numero = 97; numero < 123; numero++ ) {
+		self.lista.push(String.fromCharCode(numero))
+	}
 })

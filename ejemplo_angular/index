@@ -46,7 +46,10 @@
 
 	<div class="container">
 		<div class="row" ng-controller="Iteracion as itera">
-			{{itera.msn}}
+			<span class="label">{{itera.msn}}</span>
+			<span class="label" ng-repeat="letra in itera.lista">
+				{{letra.toUpperCase()}}
+			</span>
 		</div>
 	</div>
 
