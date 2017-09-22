@@ -46,16 +46,66 @@
 
 	<div class="container">
 		<div class="row" ng-controller="Iteracion as itera">
-			<span class="label">{{itera.msn}}</span>
+			<span class="label">
+				{{itera.msn}}
+			</span>
+			
 			<span class="label" ng-repeat="letra in itera.lista">
 				{{letra.toUpperCase()}}
 			</span>
+			<br/>
+			
+			<table class="table table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>Nombre</th>
+						<th>Edad</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat-start="(persona, propiedad) in itera.persona">
+						<td ng-click="itera.mostrarInformacion(propiedad)">
+							{{propiedad.nombreCompleto}}
+						</td>
+						<td>
+							{{propiedad.edad}}
+						</td>
+					</tr>
+					<tr ng-repeat-end></tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	
+	<div class="container">
+		<div class="row">
+			<button class="btn btn-default" data-toggle="modal" data-target="modal">Modal</button>
 		</div>
 	</div>
 
+	<div id="modal" tabindex="-1" class="modal fade modal-lg" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h5>Titulo</h5>
+				</div>
+				<div class="modal-body">
+					<span>Contenido</span>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-default" data-dismiss>Cerrar</button>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	
+
 <script type="text/javascript" src="js/angular.js"></script>
 <script type="text/javascript" src="js/ejemplo_angular.js"></script>
-
 <!--Bootstrap-->
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/> 
 <script type="text/javascript" src="js/bootstrap.min.js" />

@@ -38,4 +38,11 @@ app.controller('Iteracion', function($scope){
 	for (var numero = 97; numero < 123; numero++ ) {
 		self.lista.push(String.fromCharCode(numero))
 	}
+	self.persona = {
+		persona1: {'nombreCompleto': 'Pedro Picapidra','edad': 20},
+		persona2: {'nombreCompleto': 'Pablo Marmol', 'edad': 22}
+	}
+	self.mostrarInformacion = function (propiedades) {
+		alert("Valor actual "+propiedades.nombreCompleto)
+	}
 })
