@@ -46,3 +46,11 @@ app.controller('Iteracion', function($scope){
 		alert("Valor actual "+propiedades.nombreCompleto)
 	}
 })
+
+app.controller('Formulario', ['$scope', function($scope){
+	$scope.minimo = 5;
+	$scope.enviar = function(argument) {
+
+		console.log("Ingreso: "+$scope.nombreFormulario)
+	};
+}])

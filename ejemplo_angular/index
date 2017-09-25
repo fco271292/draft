@@ -79,7 +79,7 @@
 	
 	<div class="container">
 		<div class="row">
-			<button class="btn btn-default" data-toggle="modal" data-target="modal">Modal</button>
+			<button class="btn btn-default" data-toggle="modal" data-target="modal" disabled="true">Modal</button>
 		</div>
 	</div>
 
@@ -101,6 +101,21 @@
 			</div>
 		</div>
 		
+	</div>
+
+	<div class="container">
+		<div class="row" ng-controller="Formulario">
+			<form ng-click="enviar()" name="formulario">
+
+				<input type="text" name="nombre" ng-model="nombreFormulario" required="true" ng-minlength="minimo" placeholder="Nombre" />
+				<span ng-show="formulario.nombre.$error.minlength">Longitud minima de {{minimo}}</span>
+
+				<input type="email" name="correo" placeholder="usuario@dominio">
+				<span ng-show="formulario.correo.$error.email">Campo tipo email</span>
+				
+				<button ng-disabled="formulario.$invalid">Enviar</button>
+			</form>
+		</div>
 	</div>
 	
 
