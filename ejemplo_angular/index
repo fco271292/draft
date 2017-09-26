@@ -122,8 +122,8 @@
 		<div class="row" ng-controller="EjecutarServicio">
 			<span class="label-info">{{fecha}}</span>
 			<ul class="list-group">
-				<li ng-class-even="'text-warning'" ng-class-odd="'text-success'" ng-repeat="pais in paises">
-					{{pais.name}}
+				<li ng-mouseenter="abreviatura = pais.alpha2_code" ng-mouseleave="abreviatura = ''" ng-init="abreviatura = '' " ng-class-even="'text-warning'" ng-class-odd="'text-success'" ng-repeat="pais in paises">
+					{{pais.name}} {{abreviatura.toLowerCase()}}
 				</li>
 			</ul>
 		</div>
