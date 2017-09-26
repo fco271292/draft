@@ -55,12 +55,34 @@ app.controller('Formulario', ['$scope', function($scope){
 	};
 }])
 
-app.service('Servicio', function(){
+app.service('Servicio', function($http){
 	var self = this
-	self.msn = new Date()
-	console.log("Informacion: "+self.msn)
+	self.listaPaises = []
+	self.fechaServicio = function () {
+		return new Date()
+	}
+	self.obtenerPaises = function () {
+		$http({
+			method: 'GET',
+			url: "http://services.groupkt.com/country/get/all"
+		})
+		.then(function success(response) {
+			var paises = response.data.RestResponse.result
+			self.listaPaises = paises
+			console.log(response)
+		})
+		,(function error(response) {
+			console.log("Error :( "+response)
+		})
+		
+	}
+
 })
 
 app.controller('EjecutarServicio', ['$scope','Servicio', function($scope,Servicio){
-	console.log("Controlador...")
+	$scope.fecha = Servicio.fechaServicio().toJSON()
+	console.log("Fecha del servicio:.. "+$scope.fecha)
+	$scope.lista = Servicio.obtenerPaises()
+	console.log("DATA: "+$scope.lista)
+
 }])

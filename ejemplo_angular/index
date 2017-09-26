@@ -119,8 +119,9 @@
 	</div>
 
 	<div class="container">
-		<div class="row" ng-controller="EjecutarServicio as es">
-			<span class="text-success">{{}}</span>{{es.msn}}
+		<div class="row" ng-controller="EjecutarServicio">
+			<span class="text-success">{{fecha}}</span>
+			<span class="text-success" ng-repeat="pais in listaPaises">{{pais}}</span>
 		</div>
 	</div>
 	
