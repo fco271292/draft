@@ -120,9 +120,9 @@
 
 	<div class="container">
 		<div class="row" ng-controller="EjecutarServicio">
-			<span class="text-success">{{fecha}}</span>
+			<span class="label-info">{{fecha}}</span>
 			<ul class="list-group">
-				<li class="" ng-repeat="pais in paises">
+				<li ng-class-even="'text-warning'" ng-class-odd="'text-success'" ng-repeat="pais in paises">
 					{{pais.name}}
 				</li>
 			</ul>
