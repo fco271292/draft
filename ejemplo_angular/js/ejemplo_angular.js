@@ -62,27 +62,24 @@ app.service('Servicio', function($http){
 		return new Date()
 	}
 	self.obtenerPaises = function () {
-		$http({
+		return $http({
 			method: 'GET',
 			url: "http://services.groupkt.com/country/get/all"
-		})
-		.then(function success(response) {
-			var paises = response.data.RestResponse.result
-			self.listaPaises = paises
-			console.log(response)
-		})
-		,(function error(response) {
-			console.log("Error :( "+response)
-		})
-		
+		})		
 	}
-
 })
 
 app.controller('EjecutarServicio', ['$scope','Servicio', function($scope,Servicio){
 	$scope.fecha = Servicio.fechaServicio().toJSON()
 	console.log("Fecha del servicio:.. "+$scope.fecha)
-	$scope.lista = Servicio.obtenerPaises()
-	console.log("DATA: "+$scope.lista)
+	$scope.paises = null
+	Servicio.obtenerPaises()
+	.then(function success(response) {
+		var paises = response.data.RestResponse.result
+		$scope.paises = paises
+	})
+	,(function error(response) {
+		console.log("Error :( "+response)
+	})
 
 }])

@@ -121,7 +121,11 @@
 	<div class="container">
 		<div class="row" ng-controller="EjecutarServicio">
 			<span class="text-success">{{fecha}}</span>
-			<span class="text-success" ng-repeat="pais in listaPaises">{{pais}}</span>
+			<ul class="list-group">
+				<li class="" ng-repeat="pais in paises">
+					{{pais.name}}
+				</li>
+			</ul>
 		</div>
 	</div>
 	
