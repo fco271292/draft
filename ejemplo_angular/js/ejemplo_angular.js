@@ -54,3 +54,13 @@ app.controller('Formulario', ['$scope', function($scope){
 		console.log("Ingreso: "+$scope.nombreFormulario)
 	};
 }])
+
+app.service('Servicio', function(){
+	var self = this
+	self.msn = new Date()
+	console.log("Informacion: "+self.msn)
+})
+
+app.controller('EjecutarServicio', ['$scope','Servicio', function($scope,Servicio){
+	console.log("Controlador...")
+}])

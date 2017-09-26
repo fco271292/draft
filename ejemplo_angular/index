@@ -112,9 +112,15 @@
 
 				<input type="email" name="correo" placeholder="usuario@dominio">
 				<span ng-show="formulario.correo.$error.email">Campo tipo email</span>
-				
+
 				<button ng-disabled="formulario.$invalid">Enviar</button>
 			</form>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row" ng-controller="EjecutarServicio as es">
+			<span class="text-success">{{}}</span>{{es.msn}}
 		</div>
 	</div>
 	
