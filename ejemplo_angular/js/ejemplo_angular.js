@@ -81,6 +81,7 @@ app.controller('EjecutarServicio', ['$scope','Servicio', function($scope,Servici
 	console.log("Fecha del servicio:.. "+$scope.fecha)
 	
 	$scope.paises = null
+	$scope.respuestaServicio = null
 	
 	Servicio.obtenerPaises()
 	.then(function success(response) {
@@ -94,10 +95,11 @@ app.controller('EjecutarServicio', ['$scope','Servicio', function($scope,Servici
 	$scope.guardarUsuario = function () {
 
 		var informacion = {name:$scope.name,job:$scope.job}
-		
+
 		Servicio.guardarUsuario(informacion)
 		.then(function success(response) {
 			if(response.status == 201){
+				$scope.respuestaServicio = response.data
 				console.log( response.data );
 			}else{
 				console.log("Vacio...")
@@ -108,5 +110,4 @@ app.controller('EjecutarServicio', ['$scope','Servicio', function($scope,Servici
 		})
 	}
 	
-
 }])
