@@ -133,7 +133,7 @@
 			<div class="col-lg-6"> 
 				<span class="label-info">{{fecha}}</span>
 				<ul class="list-group">
-					<li ng-mouseenter="abreviatura = pais.alpha2_code" ng-mouseleave="abreviatura = ''" ng-init="abreviatura = '' " ng-class-even="'text-warning'" ng-class-odd="'text-success'" ng-repeat="pais in paises">
+					<li ng-mouseenter="abreviatura = pais.alpha2_code" ng-mouseleave="abreviatura = ''" ng-init="abreviatura = '' " ng-class-even="'text-warning'" ng-class-odd="'text-success'" ng-repeat="pais in paises | orderBy:pais.name:true | limitTo:paises.length / 4 ">
 						{{pais.name}} {{abreviatura.toLowerCase()}}
 					</li>
 				</ul>
