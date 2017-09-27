@@ -67,12 +67,21 @@ app.service('Servicio', function($http){
 			url: "http://services.groupkt.com/country/get/all"
 		})		
 	}
+	self.guardarUsuario = function (informacion) {
+		return $http({
+			method: "POST",
+			url: "https://reqres.in/api/users",
+			data: JSON.stringify(informacion)
+		})
+	}
 })
 
 app.controller('EjecutarServicio', ['$scope','Servicio', function($scope,Servicio){
 	$scope.fecha = Servicio.fechaServicio().toJSON()
 	console.log("Fecha del servicio:.. "+$scope.fecha)
+	
 	$scope.paises = null
+	
 	Servicio.obtenerPaises()
 	.then(function success(response) {
 		var paises = response.data.RestResponse.result
@@ -81,5 +90,23 @@ app.controller('EjecutarServicio', ['$scope','Servicio', function($scope,Servici
 	,(function error(response) {
 		console.log("Error :( "+response)
 	})
+
+	$scope.guardarUsuario = function () {
+
+		var informacion = {name:$scope.name,job:$scope.job}
+		
+		Servicio.guardarUsuario(informacion)
+		.then(function success(response) {
+			if(response.status == 201){
+				console.log( response.data );
+			}else{
+				console.log("Vacio...")
+			}
+		})
+		,(function error(response) {
+			console.log("Error :( "+response)
+		})
+	}
+	
 
 }])

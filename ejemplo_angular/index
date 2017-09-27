@@ -120,15 +120,26 @@
 
 	<div class="container">
 		<div class="row" ng-controller="EjecutarServicio">
-			<span class="label-info">{{fecha}}</span>
-			<ul class="list-group">
-				<li ng-mouseenter="abreviatura = pais.alpha2_code" ng-mouseleave="abreviatura = ''" ng-init="abreviatura = '' " ng-class-even="'text-warning'" ng-class-odd="'text-success'" ng-repeat="pais in paises">
-					{{pais.name}} {{abreviatura.toLowerCase()}}
-				</li>
-			</ul>
+			<div class="col-lg-12">
+
+				<form name="formularioServicioPost">
+					<input class="has-feedback" type="text" name="name" ng-model="name" placeholder="Nombre" required="true" />
+					<input type="text" name="job" ng-model="job" placeholder="Ocupacion" required="true" />
+					<button class="btn btn-default" ng-disabled="formularioServicioPost.$invalid" ng-click="guardarUsuario()">Guardar Informacion</button>
+				</form>
+				
+			</div>
+
+			<div class="col-lg-6"> 
+				<span class="label-info">{{fecha}}</span>
+				<ul class="list-group">
+					<li ng-mouseenter="abreviatura = pais.alpha2_code" ng-mouseleave="abreviatura = ''" ng-init="abreviatura = '' " ng-class-even="'text-warning'" ng-class-odd="'text-success'" ng-repeat="pais in paises">
+						{{pais.name}} {{abreviatura.toLowerCase()}}
+					</li>
+				</ul>
+			</div>
 		</div>
-	</div>
-	
+	</div>	
 
 <script type="text/javascript" src="js/angular.js"></script>
 <script type="text/javascript" src="js/ejemplo_angular.js"></script>
