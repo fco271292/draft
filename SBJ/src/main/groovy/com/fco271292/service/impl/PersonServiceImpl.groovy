@@ -5,7 +5,7 @@ import java.util.List
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
-import com.fco271292.entity.Person
+import com.fco271292.model.Person
 import com.fco271292.repository.PersonRepository
 import com.fco271292.service.PersonService
 
@@ -31,8 +31,7 @@ class PersonServiceImpl implements PersonService {
 	}
 	@Override
 	public List<Person> list() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Person> personas = personRepository.findAll()
 	}
 
 }
