@@ -44,7 +44,7 @@ public class PersonController {
 	@RequestMapping(value = "get/{idPerson}",  method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
 	Person save(@PathVariable Long idPerson) {
-		Person p = pRepo.findOne(idPerson)		
+		Person p = personService.get(idPerson)	
 	}
 	
 	

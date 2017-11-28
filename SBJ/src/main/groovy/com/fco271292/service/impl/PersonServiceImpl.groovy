@@ -1,10 +1,8 @@
 package com.fco271292.service.impl
 
-import java.util.List
-
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
-import com.fco271292.model.Car
+
 import com.fco271292.model.House
 import com.fco271292.model.Person
 import com.fco271292.repository.CarRepository
@@ -61,6 +59,11 @@ class PersonServiceImpl implements PersonService {
 	@Override
 	public List<Person> list() {
 		List<Person> personas = personRepository.findAll()
+	}
+
+	@Override
+	public Person get(Long id) {
+		Person person = personRepository.findOne(id) ?: new Person()
 	}
 
 }
