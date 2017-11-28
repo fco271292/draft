@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod
@@ -40,9 +41,9 @@ public class PersonController {
 		new ResponseEntity(p, HttpStatus.CREATED)
 	}
 	
-	@RequestMapping(value = "get",  method = RequestMethod.POST, produces = "application/json")
+	@RequestMapping(value = "get/{idPerson}",  method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
-	Person save(@RequestParam Long idPerson) {
+	Person save(@PathVariable Long idPerson) {
 		Person p = pRepo.findOne(idPerson)		
 	}
 	

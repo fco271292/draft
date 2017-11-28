@@ -35,7 +35,7 @@ class PersonServiceImpl implements PersonService {
 			houseRepository.save(casa)
 		}
 		
-		persona = new Person(name: person.name, lastName: person.lastName,house: casa, cars:person?.cars)
+		persona = new Person(name: person.name, lastName: person.lastName, house: casa, cars:person?.cars, cellPhones: person?.cellPhones)
 		persona = personRepository.save(persona)
 		
 //		person.cars.each{car->
