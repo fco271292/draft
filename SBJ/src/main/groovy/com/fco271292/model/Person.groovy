@@ -35,7 +35,7 @@ class Person {
 	@Column(name = "apellidoPaterno", nullable=true)
 	String lastName
 	
-	@OneToOne(optional=true)
+	@OneToOne(optional=true,cascade = CascadeType.ALL)
 	@JoinColumn(name="casa_id")
 	House house
 	

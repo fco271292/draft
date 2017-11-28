@@ -28,12 +28,12 @@ class PersonServiceImpl implements PersonService {
 		Person persona
 		House casa
 		
-		if(person?.house) {
-			casa = new House(address: person?.house?.address)
-			houseRepository.save(casa)
-		}
+//		if(person?.house) {
+//			casa = new House(address: person?.house?.address)
+//			houseRepository.save(casa)
+//		}
 		
-		persona = new Person(name: person.name, lastName: person.lastName, house: casa, cars:person?.cars, cellPhones: person?.cellPhones)
+		persona = new Person(name: person.name, lastName: person.lastName, house: person.house, cars:person?.cars, cellPhones: person?.cellPhones)
 		persona = personRepository.save(persona)
 		
 //		person.cars.each{car->
