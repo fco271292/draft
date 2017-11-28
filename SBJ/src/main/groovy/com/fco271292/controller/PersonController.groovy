@@ -47,5 +47,10 @@ public class PersonController {
 		Person p = personService.get(idPerson)	
 	}
 	
+	@RequestMapping(value = "list",  method = RequestMethod.GET, produces = "application/json")
+	@ResponseBody
+	List<Person> list() {
+		List<Person> personas = personService.list()
+	}
 	
 }
