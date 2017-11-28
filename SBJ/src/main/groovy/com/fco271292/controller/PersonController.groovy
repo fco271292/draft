@@ -8,9 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.fco271292.entity.Person
+import com.fco271292.model.Person
 import com.fco271292.repository.PersonRepository
 import com.fco271292.service.PersonService
 
@@ -24,6 +25,9 @@ public class PersonController {
 	@Qualifier("personService")
 	PersonService personService
 	
+	@Autowired
+	PersonRepository pRepo;
+	
 	@RequestMapping("index")
 	String index() {
 		"persona/index"
@@ -34,6 +38,12 @@ public class PersonController {
 	ResponseEntity<Person>save(@RequestBody Person person) {
 		Person p = personService.save(person)
 		new ResponseEntity(p, HttpStatus.CREATED)
+	}
+	
+	@RequestMapping(value = "get",  method = RequestMethod.POST, produces = "application/json")
+	@ResponseBody
+	Person save(@RequestParam Long idPerson) {
+		Person p = pRepo.findOne(idPerson)		
 	}
 	
 	
