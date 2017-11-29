@@ -1,5 +1,7 @@
 package com.fco271292.service
 
+import java.util.List
+
 import com.fco271292.model.Person
 
 interface PersonService {
