@@ -28,7 +28,7 @@ public class WebServiceConfig extends WsConfigurerAdapter {
 		DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
 		wsdl11Definition.setPortTypeName("CarroPort");
 		wsdl11Definition.setLocationUri("/ws");
-		wsdl11Definition.setTargetNamespace("http://fco.com/carro");
+		wsdl11Definition.setTargetNamespace("http://fco271292.com/ws/carro");
 		wsdl11Definition.setSchema(carSchema);
 		return wsdl11Definition;
 	}
