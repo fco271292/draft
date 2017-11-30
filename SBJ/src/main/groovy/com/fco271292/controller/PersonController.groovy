@@ -28,7 +28,7 @@ public class PersonController {
 	@Autowired
 	PersonRepository pRepo;
 	
-	@RequestMapping("index")
+	@RequestMapping(value = "index", method = RequestMethod.GET, produces = "application/json" )
 	String index() {
 		"persona/index"
     }
