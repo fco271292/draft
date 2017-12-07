@@ -21,7 +21,7 @@ public class CarEndpoint {
 	
 	static final String NAMESPACE_URI = "http://fco271292.com/ws/carro"
 	
-	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "getCarRequest")
+	@PayloadRoot(namespace = "http://fco271292.com/ws/carro", localPart = "getCarRequest")
 	@ResponsePayload
 	public GetCarResponse getCar(@RequestPayload GetCarRequest request) {
 		
