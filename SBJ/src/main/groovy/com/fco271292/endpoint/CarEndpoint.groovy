@@ -6,8 +6,8 @@ import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
-import com.fco271292.model.Car;
-import com.fco271292.repository.CarRepository;
+import com.fco271292.model.Car
+import com.fco271292.repository.CarRepository
 import com.fco271292.ws.carro.Carro;
 import com.fco271292.ws.carro.GetCarRequest;
 import com.fco271292.ws.carro.GetCarResponse;
