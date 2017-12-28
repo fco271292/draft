@@ -9,7 +9,7 @@ class TareaProgramada {
 	
 	@Scheduled(cron = "0/30 * * * * ?")
 	void obtenerHora() {
-		println "#"*50
+		println "${'#'*25} Hora Actual ${'#'*25}"
 		println new Date().format('d-MM-yyyy HH:mm:ss')
 	}
 }
