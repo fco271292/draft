@@ -9,7 +9,7 @@ class ClientSOAP {
 	
 	def getCar(String idCar) {
 		
-		def client = new SOAPClient('http://localhost:8080/ws/carro.wsdl')
+		def client = new SOAPClient('http://localhost:1234/ws/carro.wsdl')
 		def response = client.send( SOAPAction: "getCar"){
 			body {
 				getCarRequest('xmlns':'http://fco271292.com/ws/carro'){
